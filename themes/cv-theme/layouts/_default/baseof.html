@@ -3,29 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ .Site.Params.nom }} - CV</title>
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
-<body>
+<body class="mode-nuit">
 
-    <header class="banniere">
-        <h1>{{ .Site.Title }}</h1>
+    <!-- Barre du haut -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <a href="{{ "/" | relURL }}" class="home-icon">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <span class="nom">{{ .Site.Params.nom }}</span>
+        </div>
+
+        <div class="top-bar-right">
+            <a href="mailto:sacha.penelon14@gmail.com" title="M'envoyer un email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <span class="phone-container">
+                <i class="fa-solid fa-phone" id="phone-icon" title="Voir mon numéro"></i>
+                <span id="phone-number" class="phone-popup">06 58 64 37 73</span>
+            </span>
+
+            <a href="#" target="_blank" title="Mon LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <button id="toggle-theme" title="Changer de mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button id="toggle-lang" title="Changer de langue">
+                FR
+            </button>
+        </div>
     </header>
 
-    <div class="conteneur">
-        <nav class="menu-gauche">
-            <ul>
-                <li><a href="{{ "/" | relURL }}">Accueil</a></li>
-                {{ range .Site.Menus.main }}
-                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                {{ end }}
-            </ul>
-        </nav>
+    <!-- Menu horizontal sticky -->
+    <nav class="menu-horizontal">
+        {{ range .Site.Menus.main }}
+            <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+        {{ end }}
+    </nav>
 
-        <main class="contenu">
-            {{ block "main" . }}{{ end }}
-        </main>
-    </div>
-
+    <!-- Contenu de la page -->
+    <main class="contenu">
+        {{ block "main" . }}{{ end }}
+    </main>
+    <script src="{{ "js/script.js" | relURL }}"></script>
 </body>
 </html>

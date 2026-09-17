@@ -3,37 +3,67 @@
 <head><script src="/mon-cv/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=mon-cv/livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue | Mon CV</title>
+    <title>Sacha Penelon - CV</title>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="/mon-cv/css/style.css">
 </head>
-<body>
+<body class="mode-nuit">
 
-    <header class="banniere">
-        <h1>Mon CV</h1>
+    
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <a href="/" class="home-icon">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <span class="nom">Sacha Penelon</span>
+        </div>
+
+        <div class="top-bar-right">
+            <a href="mailto:sacha.penelon14@gmail.com" title="M'envoyer un email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <span class="phone-container">
+                <i class="fa-solid fa-phone" id="phone-icon" title="Voir mon numéro"></i>
+                <span id="phone-number" class="phone-popup">06 58 64 37 73</span>
+            </span>
+
+            <a href="#" target="_blank" title="Mon LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <button id="toggle-theme" title="Changer de mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button id="toggle-lang" title="Changer de langue">
+                FR
+            </button>
+        </div>
     </header>
 
-    <div class="conteneur">
-        <nav class="menu-gauche">
-            <ul>
-                <li><a href="/">Accueil</a></li>
-                
-                    <li><a href="/mon-cv/about/">A propos</a></li>
-                
-                    <li><a href="/mon-cv/projets/">Projets</a></li>
-                
-            </ul>
-        </nav>
+    
+    <nav class="menu-horizontal">
+        
+            <a href="/mon-cv/about/">A propos</a>
+        
+            <a href="/mon-cv/projets/">Projets</a>
+        
+    </nav>
 
-        <main class="contenu">
-            
+    
+    <main class="contenu">
+        
   <h1>Blue</h1>
   
   
     <h2><a href="/mon-cv/posts/post-3/">Post 3</a></h2>
   
 
-        </main>
-    </div>
-
+    </main>
+    <script src="/mon-cv/js/script.js"></script>
 </body>
 </html>
