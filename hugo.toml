@@ -1,3 +1,18 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = 'https://sacha03062004.github.io/mon-cv/'
+languageCode = 'fr-fr'
+title = 'Mon CV'
+theme = 'cv-theme'
+
+[params]
+  nom = "Sacha Penelon"
+  description = "Etudiant de l'ENSC, 2eme annee, formation cognitique"
+
+[[menu.main]]
+  name = "A propos"
+  url = "/about/"
+  weight = 1
+
+[[menu.main]]
+  name = "Projets"
+  url = "/projets/"
+  weight = 2

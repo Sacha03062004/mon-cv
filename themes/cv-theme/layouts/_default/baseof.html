@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+
+    <header class="banniere">
+        <h1>{{ .Site.Title }}</h1>
+    </header>
+
+    <div class="conteneur">
+        <nav class="menu-gauche">
+            <ul>
+                <li><a href="{{ "/" | relURL }}">Accueil</a></li>
+                {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+
+        <main class="contenu">
+            {{ block "main" . }}{{ end }}
+        </main>
+    </div>
+
+</body>
+</html>
